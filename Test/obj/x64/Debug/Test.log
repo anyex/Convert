@@ -1,0 +1,180 @@
+﻿生成启动时间为 2018/7/31 星期二 上午 09:47:40。
+     1>项目“F:\wavToMp3\Trans\Trans-1\Test\Test.vcxproj”在节点 2 上(Build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“F:\wavToMp3\Trans\Trans-1\Test\obj\x64\Debug\Test.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       _ValidateValidArchitecture:
+         Validating architecture
+         Current project architecture 'x64' is compatible with the remote system architecture 'x64' ('x64').
+       _ValidateSources:
+         Validating sources
+       _CopySources:
+         Copying sources remotely to '132.232.23.164'
+         Copying file 'F:\wavToMp3\Trans\Trans-1\Test\main.cpp' to '/root/projects/Test/main.cpp'
+       ClCompile:
+         Starting remote build
+         Compiling sources:
+         Invoking 'g++'
+         g++ -c -x c++ /root/projects/Test/main.cpp -I /root/projects/Test/C/Windows/system32 -I /root/projects/Test/C/Windows -I /root/projects/Test/C/Windows/System32/Wbem -I /root/projects/Test/C/Windows/System32/WindowsPowerShell/v1.0 -I "/root/projects/Test/C/Program Files/dotnet" -I /root/projects/Test/E/Git/cmd -I /root/projects/Test/D/VS2017/Common7/IDE/VC/Linux/include -g2 -gdwarf-2 -o "/root/projects/Test/obj/x64/Debug/main.o" -Wall -Wswitch -W"no-deprecated-declarations" -W"empty-body" -Wconversion -W"return-type" -Wparentheses -W"no-format" -Wuninitialized -W"unreachable-code" -W"unused-function" -W"unused-value" -W"unused-variable" -O0 -fno-strict-aliasing -fno-omit-frame-pointer -fthreadsafe-statics -fexceptions -frtti -std=c++11
+         main.cpp
+         /root/projects/Test/main.cpp: In member function ‘void MyString::Split(std::string&, std::string&, const string&)’:
+         /root/projects/Test/main.cpp:42:26: warning: conversion to ‘int’ from ‘std::basic_string<char>::size_type {aka long unsigned int}’ may alter its value [-Wconversion]
+            int pos = str.find(flag);
+                                   ^
+         /root/projects/Test/main.cpp: In member function ‘int MyString::find(const string&)’:
+         /root/projects/Test/main.cpp:74:20: warning: conversion to ‘int’ from ‘std::basic_string<char>::size_type {aka long unsigned int}’ may alter its value [-Wconversion]
+            return str.find(s);
+                             ^
+         /root/projects/Test/main.cpp: In member function ‘void File::splitpath(const char*, char*, char*, char*)’:
+         /root/projects/Test/main.cpp:132:26: warning: conversion to ‘int’ from ‘long int’ may alter its value [-Wconversion]
+              int ret = whole_name - pext;
+                                   ^
+         /root/projects/Test/main.cpp:132:9: warning: unused variable ‘ret’ [-Wunused-variable]
+              int ret = whole_name - pext;
+                  ^
+         /root/projects/Test/main.cpp: In member function ‘void File::readFile()’:
+         /root/projects/Test/main.cpp:158:37: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+               if (filename.find(".wav-") == -1)
+                                              ^
+         /root/projects/Test/main.cpp:185:26: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+               if (s.find(".") == -1)
+                                   ^
+         /root/projects/Test/main.cpp: In member function ‘bool File::get()’:
+         /root/projects/Test/main.cpp:232:28: warning: conversion to ‘int’ from ‘std::basic_string<char>::size_type {aka long unsigned int}’ may alter its value [-Wconversion]
+             int pos = file.find(path);
+                                     ^
+         /root/projects/Test/main.cpp:233:24: warning: conversion to ‘int’ from ‘std::basic_string<char>::size_type {aka long unsigned int}’ may alter its value [-Wconversion]
+             int len = path.size();
+                                 ^
+         /root/projects/Test/main.cpp:236:33: warning: conversion to ‘int’ from ‘std::basic_string<char>::size_type {aka long unsigned int}’ may alter its value [-Wconversion]
+             int b = file.find_last_of(".");
+                                          ^
+         /root/projects/Test/main.cpp: In member function ‘int File::CreateDir(const char*)’:
+         /root/projects/Test/main.cpp:265:30: warning: conversion to ‘int’ from ‘size_t {aka long unsigned int}’ may alter its value [-Wconversion]
+            int i, len = strlen(DirName);
+                                       ^
+         /root/projects/Test/main.cpp: In member function ‘void File::DoTrans()’:
+         /root/projects/Test/main.cpp:333:57: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+            char *cmd[] = { "--preset fast standard",wav,mp3,NULL };
+                                                                  ^
+         /root/projects/Test/main.cpp: In function ‘void sig_handle(int)’:
+         /root/projects/Test/main.cpp:411:26: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+             File::Rename(swav, "-");
+                                   ^
+         /root/projects/Test/main.cpp: In function ‘int main()’:
+         /root/projects/Test/main.cpp:486:68: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+           time_t t1 = file.setTime("2018.7.31 10:00:00", "%Y.%m.%d %H:%M:%S");
+                                                                             ^
+         /root/projects/Test/main.cpp:486:68: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+         /root/projects/Test/main.cpp:482:5: warning: unused variable ‘tm_’ [-Wunused-variable]
+           tm tm_;
+              ^
+         /root/projects/Test/main.cpp:496:9: warning: unused variable ‘ret’ [-Wunused-variable]
+           double ret = difftime(t1, file.getNowTime());
+                  ^
+         
+     1>F:\wavToMp3\Trans\Trans-1\Test\main.cpp(42,26): warning : conversion to ‘int’ from ‘std::basic_string<char>::size_type {aka long unsigned int}’ may alter its value [-Wconversion]
+F:\wavToMp3\Trans\Trans-1\Test\main.cpp(42,26): warning :    int pos = str.find(flag);
+F:\wavToMp3\Trans\Trans-1\Test\main.cpp(42,26): warning :                           ^
+     1>F:\wavToMp3\Trans\Trans-1\Test\main.cpp(74,20): warning : conversion to ‘int’ from ‘std::basic_string<char>::size_type {aka long unsigned int}’ may alter its value [-Wconversion]
+F:\wavToMp3\Trans\Trans-1\Test\main.cpp(74,20): warning :    return str.find(s);
+F:\wavToMp3\Trans\Trans-1\Test\main.cpp(74,20): warning :                     ^
+     1>F:\wavToMp3\Trans\Trans-1\Test\main.cpp(132,26): warning : conversion to ‘int’ from ‘long int’ may alter its value [-Wconversion]
+F:\wavToMp3\Trans\Trans-1\Test\main.cpp(132,26): warning :      int ret = whole_name - pext;
+F:\wavToMp3\Trans\Trans-1\Test\main.cpp(132,26): warning :                           ^
+     1>F:\wavToMp3\Trans\Trans-1\Test\main.cpp(132,9): warning : unused variable ‘ret’ [-Wunused-variable]
+F:\wavToMp3\Trans\Trans-1\Test\main.cpp(132,9): warning :      int ret = whole_name - pext;
+F:\wavToMp3\Trans\Trans-1\Test\main.cpp(132,9): warning :          ^
+     1>F:\wavToMp3\Trans\Trans-1\Test\main.cpp(158,37): warning : comparison between signed and unsigned integer expressions [-Wsign-compare]
+F:\wavToMp3\Trans\Trans-1\Test\main.cpp(158,37): warning :       if (filename.find(".wav-") == -1)
+F:\wavToMp3\Trans\Trans-1\Test\main.cpp(158,37): warning :                                      ^
+     1>F:\wavToMp3\Trans\Trans-1\Test\main.cpp(185,26): warning : comparison between signed and unsigned integer expressions [-Wsign-compare]
+F:\wavToMp3\Trans\Trans-1\Test\main.cpp(185,26): warning :       if (s.find(".") == -1)
+F:\wavToMp3\Trans\Trans-1\Test\main.cpp(185,26): warning :                           ^
+     1>F:\wavToMp3\Trans\Trans-1\Test\main.cpp(232,28): warning : conversion to ‘int’ from ‘std::basic_string<char>::size_type {aka long unsigned int}’ may alter its value [-Wconversion]
+F:\wavToMp3\Trans\Trans-1\Test\main.cpp(232,28): warning :     int pos = file.find(path);
+F:\wavToMp3\Trans\Trans-1\Test\main.cpp(232,28): warning :                             ^
+     1>F:\wavToMp3\Trans\Trans-1\Test\main.cpp(233,24): warning : conversion to ‘int’ from ‘std::basic_string<char>::size_type {aka long unsigned int}’ may alter its value [-Wconversion]
+F:\wavToMp3\Trans\Trans-1\Test\main.cpp(233,24): warning :     int len = path.size();
+F:\wavToMp3\Trans\Trans-1\Test\main.cpp(233,24): warning :                         ^
+     1>F:\wavToMp3\Trans\Trans-1\Test\main.cpp(236,33): warning : conversion to ‘int’ from ‘std::basic_string<char>::size_type {aka long unsigned int}’ may alter its value [-Wconversion]
+F:\wavToMp3\Trans\Trans-1\Test\main.cpp(236,33): warning :     int b = file.find_last_of(".");
+F:\wavToMp3\Trans\Trans-1\Test\main.cpp(236,33): warning :                                  ^
+     1>F:\wavToMp3\Trans\Trans-1\Test\main.cpp(265,30): warning : conversion to ‘int’ from ‘size_t {aka long unsigned int}’ may alter its value [-Wconversion]
+F:\wavToMp3\Trans\Trans-1\Test\main.cpp(265,30): warning :    int i, len = strlen(DirName);
+F:\wavToMp3\Trans\Trans-1\Test\main.cpp(265,30): warning :                               ^
+     1>F:\wavToMp3\Trans\Trans-1\Test\main.cpp(333,57): warning : deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+F:\wavToMp3\Trans\Trans-1\Test\main.cpp(333,57): warning :    char *cmd[] = { "--preset fast standard",wav,mp3,NULL };
+F:\wavToMp3\Trans\Trans-1\Test\main.cpp(333,57): warning :                                                          ^
+     1>F:\wavToMp3\Trans\Trans-1\Test\main.cpp(411,26): warning : deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     1>F:\wavToMp3\Trans\Trans-1\Test\main.cpp(486,68): warning : deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     1>F:\wavToMp3\Trans\Trans-1\Test\main.cpp(486,68): warning : deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     1>F:\wavToMp3\Trans\Trans-1\Test\main.cpp(482,5): warning : unused variable ‘tm_’ [-Wunused-variable]
+F:\wavToMp3\Trans\Trans-1\Test\main.cpp(482,5): warning :   tm tm_;
+F:\wavToMp3\Trans\Trans-1\Test\main.cpp(482,5): warning :      ^
+     1>F:\wavToMp3\Trans\Trans-1\Test\main.cpp(496,9): warning : unused variable ‘ret’ [-Wunused-variable]
+F:\wavToMp3\Trans\Trans-1\Test\main.cpp(496,9): warning :   double ret = difftime(t1, file.getNowTime());
+F:\wavToMp3\Trans\Trans-1\Test\main.cpp(496,9): warning :          ^
+         Done compiling '/root/projects/Test/main.cpp'
+       Link:
+         Linking objects
+         Invoking 'ld'
+         g++ -o "/root/projects/Test/bin/x64/Debug/Test.out" -Wl,--no-undefined -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack /root/projects/Test/obj/x64/Debug/main.o
+         Done linking, output file name: '/root/projects/Test/bin/x64/Debug/Test.out'
+         Copying file '/root/projects/Test/bin/x64/Debug/Test.out' to 'F:\wavToMp3\Trans\Trans-1\Test\bin\x64\Debug\Test.out'
+         Test.vcxproj -> F:\wavToMp3\Trans\Trans-1\Test\bin\x64\Debug\Test.out
+       FinalizeBuildStatus:
+         正在删除文件“F:\wavToMp3\Trans\Trans-1\Test\obj\x64\Debug\Test.tlog\unsuccessfulbuild”。
+         正在对“F:\wavToMp3\Trans\Trans-1\Test\obj\x64\Debug\Test.tlog\Test.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“F:\wavToMp3\Trans\Trans-1\Test\Test.vcxproj”(Build 个目标)的操作。
+
+已成功生成。
+
+       “F:\wavToMp3\Trans\Trans-1\Test\Test.vcxproj”(Build 目标) (1) ->
+       (ClCompile 目标) -> 
+         F:\wavToMp3\Trans\Trans-1\Test\main.cpp(42,26): warning : conversion to ‘int’ from ‘std::basic_string<char>::size_type {aka long unsigned int}’ may alter its value [-Wconversion]
+       F:\wavToMp3\Trans\Trans-1\Test\main.cpp(42,26): warning :    int pos = str.find(flag);
+       F:\wavToMp3\Trans\Trans-1\Test\main.cpp(42,26): warning :                           ^
+         F:\wavToMp3\Trans\Trans-1\Test\main.cpp(74,20): warning : conversion to ‘int’ from ‘std::basic_string<char>::size_type {aka long unsigned int}’ may alter its value [-Wconversion]
+       F:\wavToMp3\Trans\Trans-1\Test\main.cpp(74,20): warning :    return str.find(s);
+       F:\wavToMp3\Trans\Trans-1\Test\main.cpp(74,20): warning :                     ^
+         F:\wavToMp3\Trans\Trans-1\Test\main.cpp(132,26): warning : conversion to ‘int’ from ‘long int’ may alter its value [-Wconversion]
+       F:\wavToMp3\Trans\Trans-1\Test\main.cpp(132,26): warning :      int ret = whole_name - pext;
+       F:\wavToMp3\Trans\Trans-1\Test\main.cpp(132,26): warning :                           ^
+         F:\wavToMp3\Trans\Trans-1\Test\main.cpp(132,9): warning : unused variable ‘ret’ [-Wunused-variable]
+       F:\wavToMp3\Trans\Trans-1\Test\main.cpp(132,9): warning :      int ret = whole_name - pext;
+       F:\wavToMp3\Trans\Trans-1\Test\main.cpp(132,9): warning :          ^
+         F:\wavToMp3\Trans\Trans-1\Test\main.cpp(158,37): warning : comparison between signed and unsigned integer expressions [-Wsign-compare]
+       F:\wavToMp3\Trans\Trans-1\Test\main.cpp(158,37): warning :       if (filename.find(".wav-") == -1)
+       F:\wavToMp3\Trans\Trans-1\Test\main.cpp(158,37): warning :                                      ^
+         F:\wavToMp3\Trans\Trans-1\Test\main.cpp(185,26): warning : comparison between signed and unsigned integer expressions [-Wsign-compare]
+       F:\wavToMp3\Trans\Trans-1\Test\main.cpp(185,26): warning :       if (s.find(".") == -1)
+       F:\wavToMp3\Trans\Trans-1\Test\main.cpp(185,26): warning :                           ^
+         F:\wavToMp3\Trans\Trans-1\Test\main.cpp(232,28): warning : conversion to ‘int’ from ‘std::basic_string<char>::size_type {aka long unsigned int}’ may alter its value [-Wconversion]
+       F:\wavToMp3\Trans\Trans-1\Test\main.cpp(232,28): warning :     int pos = file.find(path);
+       F:\wavToMp3\Trans\Trans-1\Test\main.cpp(232,28): warning :                             ^
+         F:\wavToMp3\Trans\Trans-1\Test\main.cpp(233,24): warning : conversion to ‘int’ from ‘std::basic_string<char>::size_type {aka long unsigned int}’ may alter its value [-Wconversion]
+       F:\wavToMp3\Trans\Trans-1\Test\main.cpp(233,24): warning :     int len = path.size();
+       F:\wavToMp3\Trans\Trans-1\Test\main.cpp(233,24): warning :                         ^
+         F:\wavToMp3\Trans\Trans-1\Test\main.cpp(236,33): warning : conversion to ‘int’ from ‘std::basic_string<char>::size_type {aka long unsigned int}’ may alter its value [-Wconversion]
+       F:\wavToMp3\Trans\Trans-1\Test\main.cpp(236,33): warning :     int b = file.find_last_of(".");
+       F:\wavToMp3\Trans\Trans-1\Test\main.cpp(236,33): warning :                                  ^
+         F:\wavToMp3\Trans\Trans-1\Test\main.cpp(265,30): warning : conversion to ‘int’ from ‘size_t {aka long unsigned int}’ may alter its value [-Wconversion]
+       F:\wavToMp3\Trans\Trans-1\Test\main.cpp(265,30): warning :    int i, len = strlen(DirName);
+       F:\wavToMp3\Trans\Trans-1\Test\main.cpp(265,30): warning :                               ^
+         F:\wavToMp3\Trans\Trans-1\Test\main.cpp(333,57): warning : deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+       F:\wavToMp3\Trans\Trans-1\Test\main.cpp(333,57): warning :    char *cmd[] = { "--preset fast standard",wav,mp3,NULL };
+       F:\wavToMp3\Trans\Trans-1\Test\main.cpp(333,57): warning :                                                          ^
+         F:\wavToMp3\Trans\Trans-1\Test\main.cpp(411,26): warning : deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+         F:\wavToMp3\Trans\Trans-1\Test\main.cpp(486,68): warning : deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+         F:\wavToMp3\Trans\Trans-1\Test\main.cpp(486,68): warning : deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+         F:\wavToMp3\Trans\Trans-1\Test\main.cpp(482,5): warning : unused variable ‘tm_’ [-Wunused-variable]
+       F:\wavToMp3\Trans\Trans-1\Test\main.cpp(482,5): warning :   tm tm_;
+       F:\wavToMp3\Trans\Trans-1\Test\main.cpp(482,5): warning :      ^
+         F:\wavToMp3\Trans\Trans-1\Test\main.cpp(496,9): warning : unused variable ‘ret’ [-Wunused-variable]
+       F:\wavToMp3\Trans\Trans-1\Test\main.cpp(496,9): warning :   double ret = difftime(t1, file.getNowTime());
+       F:\wavToMp3\Trans\Trans-1\Test\main.cpp(496,9): warning :          ^
+
+    16 个警告
+    0 个错误
+
+已用时间 00:00:06.92
