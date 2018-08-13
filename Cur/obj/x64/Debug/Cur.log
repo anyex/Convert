@@ -1,4 +1,4 @@
-﻿生成启动时间为 2018/8/10 星期五 下午 04:19:39。
+﻿生成启动时间为 2018/8/13 星期一 下午 04:00:57。
      1>项目“F:\wavToMp3\Trans\Trans-1\Trans-1\Cur\Cur.vcxproj”在节点 2 上(Build 个目标)。
      1>InitializeBuildStatus:
          正在创建“F:\wavToMp3\Trans\Trans-1\Trans-1\Cur\obj\x64\Debug\Cur.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
@@ -32,32 +32,28 @@
               int ret = whole_name - pext;
                   ^
          /root/projects/Cur/main.cpp: 在成员函数‘void File::readFile()’中:
-         /root/projects/Cur/main.cpp:157:39: 警告：在有符号和无符号整数表达式间比较 [-Wsign-compare]
-               if (filename.find(".wavbak") == -1&&(filename.find(".mp3") == -1))
-                                                ^
-         /root/projects/Cur/main.cpp:157:69: 警告：在有符号和无符号整数表达式间比较 [-Wsign-compare]
-               if (filename.find(".wavbak") == -1&&(filename.find(".mp3") == -1))
-                                                                              ^
-         /root/projects/Cur/main.cpp:181:26: 警告：在有符号和无符号整数表达式间比较 [-Wsign-compare]
+         /root/projects/Cur/main.cpp:161:33: 警告：在有符号和无符号整数表达式间比较 [-Wsign-compare]
+               if (filename.find("wav")!=-1 && filename.find("wavbak") == -1)
+                                          ^
+         /root/projects/Cur/main.cpp:161:66: 警告：在有符号和无符号整数表达式间比较 [-Wsign-compare]
+               if (filename.find("wav")!=-1 && filename.find("wavbak") == -1)
+                                                                           ^
+         /root/projects/Cur/main.cpp:185:26: 警告：在有符号和无符号整数表达式间比较 [-Wsign-compare]
                if (s.find(".") == -1)
                                    ^
          /root/projects/Cur/main.cpp: 在成员函数‘int File::CreateDir(const char*)’中:
-         /root/projects/Cur/main.cpp:202:30: 警告：‘int’转换自‘size_t {aka long unsigned int}’时可能改变值 [-Wconversion]
+         /root/projects/Cur/main.cpp:221:30: 警告：‘int’转换自‘size_t {aka long unsigned int}’时可能改变值 [-Wconversion]
             int i, len = strlen(DirName);
                                        ^
          /root/projects/Cur/main.cpp: 在成员函数‘bool File::get()’中:
-         /root/projects/Cur/main.cpp:238:33: 警告：‘int’转换自‘std::basic_string<char>::size_type {aka long unsigned int}’时可能改变值 [-Wconversion]
+         /root/projects/Cur/main.cpp:257:33: 警告：‘int’转换自‘std::basic_string<char>::size_type {aka long unsigned int}’时可能改变值 [-Wconversion]
              int b = file.find_last_of(".");
                                           ^
          /root/projects/Cur/main.cpp: 在成员函数‘void File::Covert()’中:
-         /root/projects/Cur/main.cpp:271:82: 警告：不建议使用从字符串常量到‘char*’的转换 [-Wwrite-strings]
+         /root/projects/Cur/main.cpp:290:82: 警告：不建议使用从字符串常量到‘char*’的转换 [-Wwrite-strings]
             char *cmd[] = { "sh","/root/test.sh",wav,localMp3,localMp3,netMp3,mp3,(char*)0 };
                                                                                            ^
-         /root/projects/Cur/main.cpp:271:82: 警告：不建议使用从字符串常量到‘char*’的转换 [-Wwrite-strings]
-         /root/projects/Cur/main.cpp: 在函数‘void sig_handle(int)’中:
-         /root/projects/Cur/main.cpp:362:28: 警告：不建议使用从字符串常量到‘char*’的转换 [-Wwrite-strings]
-             File::Rename(swav, "bak");
-                                     ^
+         /root/projects/Cur/main.cpp:290:82: 警告：不建议使用从字符串常量到‘char*’的转换 [-Wwrite-strings]
          
          Done compiling '/root/projects/Cur/main.cpp'
        Link:
@@ -76,4 +72,4 @@
     0 个警告
     0 个错误
 
-已用时间 00:00:21.19
+已用时间 00:00:15.53

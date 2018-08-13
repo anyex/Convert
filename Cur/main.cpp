@@ -154,7 +154,11 @@ public:
 				if (direntp->d_type == 8)//文件
 				{
 					std::string filename(direntp->d_name);
-					if (filename.find(".wavbak") == -1&&(filename.find(".mp3") == -1))
+					std::string exten(direntp->d_name);
+
+					exten = exten.substr(exten.find(".") + 1);
+
+					if (filename.find("wav")!=-1 && filename.find("wavbak") == -1)
 					{
 						file.append(path);
 						file.append("/");
@@ -189,7 +193,7 @@ public:
 						stat(path.c_str(), &buf);
 						//获取目录的创建时间
 						time_t sec_ts = buf.st_ctim.tv_sec;
-						
+
 						struct tm t = *gmtime(&sec_ts);
 
 						struct tm local = getNowTm();
@@ -261,8 +265,8 @@ public:
 			sprintf(netMp3, "%s%s", out.c_str(), file.c_str());
 
 			std::string curMp3(netMp3);
-			curMp3.erase(0, curMp3.find(":")+1);
-			curMp3.erase(curMp3.find_last_of("/"));
+			curMp3.erase(0, curMp3.find(":") + 1);
+			curMp3.erase(curMp3.find_last_of("/")+1);
 			strcpy(mp3, curMp3.c_str());
 
 			//	sprintf(mp3, "%s%s%s", out.c_str(), file.c_str(), ".mp3");
@@ -378,7 +382,7 @@ private:
 	char netMp3[128];//转存的mp3文件路径(带网络地址)
 	char localMp3[128];//本地mp3路径
 	char name[128];//文件名称
-	
+
 	std::set<std::string> set;//读取的文件列表
 	std::string & path;//输入文件路径
 	std::string & out; //转存文件路径
@@ -396,7 +400,7 @@ void sig_handle(int num)
 		{
 			printf("child process exit pid[%6d],exit code[%d]\n", pid, WEXITSTATUS(status));
 			processNum--;
-			File::Rename(swav, "bak");
+			//File::Rename(swav, "bak");
 		}
 		else {
 			printf("child process exit but...\n");
@@ -454,39 +458,40 @@ public:
 
 int main()
 {
-
-
 	Ini ini("/root/task.ini");
 	File file(ini.Inid["set"]["audiodir"], ini.Inid["set"]["transdir"]);
 
+
+
 	signal(SIGCHLD, sig_handle);//为子进程退出注册事件
-	
+
 	while (true)
 	{
-	if (processNum < 2&&(!file.IsEmptySet()))
-	{
-	if (vfork() == 0)
-	{
-		if (!file.get())
-			exit(0);
-			strcpy(swav, file.wav);
-			file.Covert();
-	}
-	else
-	{
-		continue;
-	}
-	}
-	else if(processNum<2)
-	{
-		file.readFile();
-	if (file.IsEmptySet())
-		std::cout << "wav be finished!" << std::endl;
-	}
-	else {
-		sleep(1);
+		if (processNum < 4 && (!file.IsEmptySet()))
+		{
+			if (vfork() == 0)
+			{
+				if (!file.get())
+					exit(0);
+				strcpy(swav, file.wav);
+				file.Covert();
+			}
+			else
+			{
+				continue;
+			}
+		}
+		else if (processNum<4)
+		{
+			file.readFile();
+			if (file.IsEmptySet())
+				std::cout << "wav be finished!" << std::endl;
+		}
+		else {
+			sleep(1);
 		}
 	}
+
 	return 0;
 }
 

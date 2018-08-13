@@ -309,6 +309,8 @@ public:
 
 				if (direntp->d_type == 8)
 				{
+					std::string mp3(a);
+					if(mp3.find(".mp3"))
 					unlink(a);
 				}
 			}
