@@ -1,0 +1,1 @@
+g++ -o "/root/projects/Cur/bin/x64/Debug/Cur.out" -Wl,--no-undefined -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack /root/projects/Cur/obj/x64/Debug/main.o

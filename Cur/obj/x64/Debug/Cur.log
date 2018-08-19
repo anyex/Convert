@@ -1,15 +1,15 @@
-﻿生成启动时间为 2018/8/13 星期一 下午 04:00:57。
-     1>项目“F:\wavToMp3\Trans\Trans-1\Trans-1\Cur\Cur.vcxproj”在节点 2 上(Build 个目标)。
+﻿生成启动时间为 2018/8/19 20:57:57。
+     1>项目“G:\Project\Convert\Convert\Cur\Cur.vcxproj”在节点 2 上(Build 个目标)。
      1>InitializeBuildStatus:
-         正在创建“F:\wavToMp3\Trans\Trans-1\Trans-1\Cur\obj\x64\Debug\Cur.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
-       _ValidateValidArchitecture:
-         Validating architecture
-         Current project architecture 'x64' is compatible with the remote system architecture 'x64' ('x64').
+         正在创建“G:\Project\Convert\Convert\Cur\obj\x64\Debug\Cur.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        _ValidateSources:
          Validating sources
        _CopySources:
-         Copying sources remotely to '192.168.254.133'
-         Copying file 'F:\wavToMp3\Trans\Trans-1\Trans-1\Cur\main.cpp' to '/root/projects/Cur/main.cpp'
+         Copying sources remotely to '192.168.1.163'
+         Copying file 'G:\Project\Convert\Convert\Cur\main.cpp' to '/root/projects/Cur/main.cpp'
+       _ValidateValidArchitecture:
+         Validating architecture
+         Current project architecture 'x64' is compatible with the remote system architecture 'x64' ('x64').
        ClCompile:
          Starting remote build
          Compiling sources:
@@ -17,43 +17,43 @@
          g++ -c -x c++ /root/projects/Cur/main.cpp -g2 -gdwarf-2 -o "/root/projects/Cur/obj/x64/Debug/main.o" -Wall -Wswitch -W"no-deprecated-declarations" -W"empty-body" -Wconversion -W"return-type" -Wparentheses -W"no-format" -Wuninitialized -W"unreachable-code" -W"unused-function" -W"unused-value" -W"unused-variable" -O0 -fno-strict-aliasing -fno-omit-frame-pointer -fthreadsafe-statics -fexceptions -frtti -std=c++11
          main.cpp
          /root/projects/Cur/main.cpp: 在成员函数‘void MyString::Split(std::string&, std::string&, const string&)’中:
-         /root/projects/Cur/main.cpp:45:26: 警告：‘int’转换自‘std::basic_string<char>::size_type {aka long unsigned int}’时可能改变值 [-Wconversion]
+         /root/projects/Cur/main.cpp:46:26: 警告：‘int’转换自‘std::basic_string<char>::size_type {aka long unsigned int}’时可能改变值 [-Wconversion]
             int pos = str.find(flag);
                                    ^
          /root/projects/Cur/main.cpp: 在成员函数‘int MyString::find(const string&)’中:
-         /root/projects/Cur/main.cpp:77:20: 警告：‘int’转换自‘std::basic_string<char>::size_type {aka long unsigned int}’时可能改变值 [-Wconversion]
+         /root/projects/Cur/main.cpp:78:20: 警告：‘int’转换自‘std::basic_string<char>::size_type {aka long unsigned int}’时可能改变值 [-Wconversion]
             return str.find(s);
                              ^
          /root/projects/Cur/main.cpp: 在成员函数‘void File::splitpath(const char*, char*, char*, char*)’中:
-         /root/projects/Cur/main.cpp:131:26: 警告：‘int’转换自‘long int’时可能改变值 [-Wconversion]
+         /root/projects/Cur/main.cpp:187:26: 警告：‘int’转换自‘long int’时可能改变值 [-Wconversion]
               int ret = whole_name - pext;
                                    ^
-         /root/projects/Cur/main.cpp:131:9: 警告：未使用的变量‘ret’ [-Wunused-variable]
+         /root/projects/Cur/main.cpp:187:9: 警告：未使用的变量‘ret’ [-Wunused-variable]
               int ret = whole_name - pext;
                   ^
          /root/projects/Cur/main.cpp: 在成员函数‘void File::readFile()’中:
-         /root/projects/Cur/main.cpp:161:33: 警告：在有符号和无符号整数表达式间比较 [-Wsign-compare]
+         /root/projects/Cur/main.cpp:217:33: 警告：在有符号和无符号整数表达式间比较 [-Wsign-compare]
                if (filename.find("wav")!=-1 && filename.find("wavbak") == -1)
                                           ^
-         /root/projects/Cur/main.cpp:161:66: 警告：在有符号和无符号整数表达式间比较 [-Wsign-compare]
+         /root/projects/Cur/main.cpp:217:66: 警告：在有符号和无符号整数表达式间比较 [-Wsign-compare]
                if (filename.find("wav")!=-1 && filename.find("wavbak") == -1)
                                                                            ^
-         /root/projects/Cur/main.cpp:185:26: 警告：在有符号和无符号整数表达式间比较 [-Wsign-compare]
+         /root/projects/Cur/main.cpp:240:26: 警告：在有符号和无符号整数表达式间比较 [-Wsign-compare]
                if (s.find(".") == -1)
                                    ^
          /root/projects/Cur/main.cpp: 在成员函数‘int File::CreateDir(const char*)’中:
-         /root/projects/Cur/main.cpp:221:30: 警告：‘int’转换自‘size_t {aka long unsigned int}’时可能改变值 [-Wconversion]
+         /root/projects/Cur/main.cpp:276:30: 警告：‘int’转换自‘size_t {aka long unsigned int}’时可能改变值 [-Wconversion]
             int i, len = strlen(DirName);
                                        ^
          /root/projects/Cur/main.cpp: 在成员函数‘bool File::get()’中:
-         /root/projects/Cur/main.cpp:257:33: 警告：‘int’转换自‘std::basic_string<char>::size_type {aka long unsigned int}’时可能改变值 [-Wconversion]
+         /root/projects/Cur/main.cpp:312:33: 警告：‘int’转换自‘std::basic_string<char>::size_type {aka long unsigned int}’时可能改变值 [-Wconversion]
              int b = file.find_last_of(".");
                                           ^
          /root/projects/Cur/main.cpp: 在成员函数‘void File::Covert()’中:
-         /root/projects/Cur/main.cpp:290:82: 警告：不建议使用从字符串常量到‘char*’的转换 [-Wwrite-strings]
-            char *cmd[] = { "sh","/root/test.sh",wav,localMp3,localMp3,netMp3,mp3,(char*)0 };
-                                                                                           ^
-         /root/projects/Cur/main.cpp:290:82: 警告：不建议使用从字符串常量到‘char*’的转换 [-Wwrite-strings]
+         /root/projects/Cur/main.cpp:347:25: 警告：不建议使用从字符串常量到‘char*’的转换 [-Wwrite-strings]
+             BtrasWavbak,(char*)0 };
+                                  ^
+         /root/projects/Cur/main.cpp:347:25: 警告：不建议使用从字符串常量到‘char*’的转换 [-Wwrite-strings]
          
          Done compiling '/root/projects/Cur/main.cpp'
        Link:
@@ -61,15 +61,15 @@
          Invoking 'ld'
          g++ -o "/root/projects/Cur/bin/x64/Debug/Cur.out" -Wl,--no-undefined -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack /root/projects/Cur/obj/x64/Debug/main.o
          Done linking, output file name: '/root/projects/Cur/bin/x64/Debug/Cur.out'
-         Copying file '/root/projects/Cur/bin/x64/Debug/Cur.out' to 'F:\wavToMp3\Trans\Trans-1\Trans-1\Cur\bin\x64\Debug\Cur.out'
-         Cur.vcxproj -> F:\wavToMp3\Trans\Trans-1\Trans-1\Cur\bin\x64\Debug\Cur.out
+         Copying file '/root/projects/Cur/bin/x64/Debug/Cur.out' to 'G:\Project\Convert\Convert\Cur\bin\x64\Debug\Cur.out'
+         Cur.vcxproj -> G:\Project\Convert\Convert\Cur\bin\x64\Debug\Cur.out
        FinalizeBuildStatus:
-         正在删除文件“F:\wavToMp3\Trans\Trans-1\Trans-1\Cur\obj\x64\Debug\Cur.tlog\unsuccessfulbuild”。
-         正在对“F:\wavToMp3\Trans\Trans-1\Trans-1\Cur\obj\x64\Debug\Cur.tlog\Cur.lastbuildstate”执行 Touch 任务。
-     1>已完成生成项目“F:\wavToMp3\Trans\Trans-1\Trans-1\Cur\Cur.vcxproj”(Build 个目标)的操作。
+         正在删除文件“G:\Project\Convert\Convert\Cur\obj\x64\Debug\Cur.tlog\unsuccessfulbuild”。
+         正在对“G:\Project\Convert\Convert\Cur\obj\x64\Debug\Cur.tlog\Cur.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“G:\Project\Convert\Convert\Cur\Cur.vcxproj”(Build 个目标)的操作。
 
 已成功生成。
     0 个警告
     0 个错误
 
-已用时间 00:00:15.53
+已用时间 00:00:02.13

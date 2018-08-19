@@ -27,6 +27,7 @@ int processNum = 0;
 char swav[128] = { 0 };
 
 
+
 /*自定义string类*/
 class MyString {
 public:
@@ -80,13 +81,69 @@ public:
 	std::string str;
 
 };
+
+/*读取配置文件*/
+class Ini {
+
+public:
+	Ini(const std::string& file) :filename(file) {
+		getIni();
+	};
+	void getIni() {
+		std::ifstream inflie(filename.data());
+		if (inflie)
+		{
+			MyString s;
+			std::string s1, s2, root;
+			while (getline(inflie, s.str))
+			{
+				int pos = s.find("//");
+				if (pos == 0)
+				{
+					continue;
+				}
+				s.DeleteMark(" ");
+				s.DeleteMark("\r");
+				s.DeleteMark("\t");
+
+				if (s.find("[") != -1)
+				{
+					s.DeleteMark("[");
+					s.DeleteMark("]");
+					root = s.str;
+					continue;
+				}
+				s.Split(s1, s2, "=");
+				Inid[root][s1] = s2;
+			}
+		}
+		else
+		{
+			std::cout << "can't open file!" << std::endl;
+		}
+		inflie.close();
+	};
+public:
+
+	std::map <std::string, std::map<std::string, std::string> > Inid;
+	const std::string& filename;
+};
+Ini ini("/root/task.ini");
+
+
 /*文件系列处理*/
 class File {
 public:
 	/*传入输入路径和输出路径*/
 	File(std::string &Path, std::string &output) :path(Path), out(output) {
+
+		 strcpy( TransMode, ini.Inid["set"]["transmode"].c_str());
+		 strcpy(DelWavFlag,ini.Inid["set"]["DelWavFlag"].c_str());
+		 strcpy(BtrasWavbak, ini.Inid["set"]["btranswavbak"].c_str());
 		readFile();
+
 	};
+
 	/*重命名函数*/
 	static void Rename(char *oldname, char *flag)
 	{
@@ -118,7 +175,6 @@ public:
 		printf("whole_name:  %s\n", whole_name + 1);
 
 		snprintf(dir, whole_name - path + 1, "%s", path);
-
 
 
 		if (whole_name != NULL)
@@ -170,7 +226,6 @@ public:
 							set.insert(file);
 							file.clear();
 						}
-
 						continue;
 						//if (set.size() >= 20)
 						//sleep(5);
@@ -287,7 +342,9 @@ public:
 	/*执行转换,转存*/
 	void Covert() {
 		processNum++;
-		char *cmd[] = { "sh","/root/test.sh",wav,localMp3,localMp3,netMp3,mp3,(char*)0 };
+		char *cmd[] = { "sh","/root/test.sh",wav,localMp3,localMp3,netMp3,mp3,TransMode,
+			DelWavFlag,
+			BtrasWavbak,(char*)0 };
 		if (execv("/bin/sh", cmd) < 0)
 		{
 			perror("error on exec");
@@ -382,6 +439,9 @@ private:
 	char netMp3[128];//转存的mp3文件路径(带网络地址)
 	char localMp3[128];//本地mp3路径
 	char name[128];//文件名称
+	char TransMode[4];
+	char DelWavFlag[4];
+	char BtrasWavbak[4];
 
 	std::set<std::string> set;//读取的文件列表
 	std::string & path;//输入文件路径
@@ -409,63 +469,16 @@ void sig_handle(int num)
 	}
 }
 
-/*读取配置文件*/
-class Ini {
-
-public:
-	Ini(const std::string& file) :filename(file) {
-		getIni();
-	};
-	void getIni() {
-		std::ifstream inflie(filename.data());
-		if (inflie)
-		{
-			MyString s;
-			std::string s1, s2, root;
-			while (getline(inflie, s.str))
-			{
-				int pos = s.find("//");
-				if (pos == 0)
-				{
-					continue;
-				}
-				s.DeleteMark(" ");
-				s.DeleteMark("\r");
-				s.DeleteMark("\t");
-
-				if (s.find("[") != -1)
-				{
-					s.DeleteMark("[");
-					s.DeleteMark("]");
-					root = s.str;
-					continue;
-				}
-				s.Split(s1, s2, "=");
-				Inid[root][s1] = s2;
-			}
-		}
-		else
-		{
-			std::cout << "can't open file!" << std::endl;
-		}
-		inflie.close();
-	};
-public:
-
-	std::map <std::string, std::map<std::string, std::string> > Inid;
-	const std::string& filename;
-};
-
 int main()
 {
-	Ini ini("/root/task.ini");
+	
 	File file(ini.Inid["set"]["audiodir"], ini.Inid["set"]["transdir"]);
-
-
 
 	signal(SIGCHLD, sig_handle);//为子进程退出注册事件
 
-	while (true)
+	file.get();
+	//while (true)
+	for(int i=0;i<1;i++)
 	{
 		if (processNum < 4 && (!file.IsEmptySet()))
 		{
